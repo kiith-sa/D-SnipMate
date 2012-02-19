@@ -7,6 +7,9 @@ the `SnipMate <https://github.com/garbas/vim-snipmate>`_  plugin for the
 `Vim <http://www.vim.org>`_ text editor. SnipMate adds TextMate-like snippets 
 for Vim.
 
+D-SnipMate is released under the 
+`Boost License <http://www.boost.org/LICENSE_1_0.txt>`_.
+
 -----
 Notes
 -----
