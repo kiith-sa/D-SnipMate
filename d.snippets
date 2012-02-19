@@ -1,0 +1,545 @@
+# main()
+snippet main
+	void main(string[] args)
+	{
+		${1}
+	}
+snippet mainn
+	void main()
+	{
+		${1}
+	}
+
+# Import	
+snippet imp
+	import ${1:module};
+# Public import	
+snippet pubimp
+	public import ${1:module};
+# if, else
+snippet if
+	if(${1:/* condition */})
+	{
+		${2}
+	}
+snippet ife
+	if(${1:/* condition */})
+	{
+		${2}
+	}
+	else
+	{
+		${3}
+	}
+snippet else
+	else
+	{
+		${1}
+	}
+snippet elif
+	else if(${1:/* condition */})
+	{
+		${2}
+	}
+# switch
+snippet switch
+	switch(${1:var})
+	{
+		case ${2:value}:
+			${3}
+			break;
+		default:
+	}
+snippet sw
+	switch(${1:var})
+	{
+		case ${2:value}:
+			${3}
+			break;
+		default:
+	}
+snippet case
+	case ${1:value}:
+		${2}
+		break;
+# ternary operator
+snippet ter
+	${3:/* condition */} ? ${2:a} : ${1:b}
+# do while
+snippet do
+	do
+	{
+		${2}
+	} while (${1:/* condition */});
+# while
+snippet while
+	while(${1:/* condition */})
+	{
+		${2}
+	}
+snippet wh
+	while(${1:/* condition */})
+	{
+		${2}
+	}
+# for
+snippet for
+	for(${3:i} = 0; $3 < ${2:count}; ${1:++}$3)
+	{
+		${4}
+	}
+snippet forr
+	for(${4:i} = ${3:0}; ${2:$4 < 10}; ${1:++}$4)
+	{
+		${5}
+	}
+# foreach
+snippet foreach
+	foreach(${2:var}; ${1:iterable})
+	{
+		${3}
+	}
+snippet foreachh
+	foreach(${3:idx}, ${2:var}; ${1:iterable})
+	{
+		${4}
+	}
+snippet fore
+	foreach(${2:var}; ${1:iterable})
+	{
+		${3}
+	}
+snippet foree
+	foreach(${3:idx}, ${2:var}; ${1:iterable})
+	{
+		${4}
+	}
+snippet forif
+	foreach(${3:var}; ${2:iterable}) if (${1:/*condition*/})
+	{
+		${4}
+	}
+# function
+snippet fun
+	${3:void} ${2:function_name}(${1})
+	{
+		${4}
+	}
+snippet funn
+	${3:void} ${2:function_name}(${1})
+	in
+	{
+		${4}
+	}
+	body
+	{
+		${5}
+	}
+snippet over
+	override ${3:void} ${2:function_name}(${1})
+	{
+		${4}
+	}
+snippet this
+	this(${1})
+	{
+		${2}
+	}
+snippet ~this
+	~this(${1})
+	{
+		${2}
+	}
+# contracts
+snippet in
+	in
+	{
+		assert(${2}, "${1}");
+	}
+	body
+snippet out
+	out
+	{
+		assert(${2}, "${1}");
+	}
+	body
+snippet body
+	body
+	{
+		${1}
+	}
+# delegate
+snippet dg
+	(${2:args}){${1};}
+snippet dgg
+	{${1};}
+# accessors
+snippet get
+	@property ${2:type} ${1:member_name}() const {return $1_;}
+snippet set
+	@property void ${3:member_name}(${2:type} rhs){${1} = rhs;}
+# signal
+snippet signal
+	mixin Signal!(${2:args}) ${1:name};
+# alias
+snippet al
+	alias ${2:type} ${1:alias_type};
+# mixin
+snippet mix
+	mixin ${2:mixed_in} ${1:name};
+# scope
+snippet scope
+	scope(${1:exit})
+	{
+		${2}
+	}
+# try/catch
+snippet try
+	try
+	{
+		${1}
+	}
+	catch(${2:Exception} e)
+	{
+		${3}
+	}
+snippet tryf
+	try
+	{
+		${1}
+	}
+	catch(${2:Exception} e)
+	{
+		${3}
+	}
+	finally
+	{
+		${4}
+	}
+snippet catch
+	catch(${1}Exception e)
+	{
+		${2}
+	}
+snippet cat
+	catch(${1}Exception e)
+	{
+		${2}
+	}
+# throw 
+snippet thr 
+	throw new ${2}Exception("${1}");
+snippet throw
+	throw new ${2}Exception("${1}");
+# with 
+snippet with 
+	with(${1})
+	{
+		${2}
+	}
+# struct
+snippet struct
+	struct ${1:`Filename('$1', 'name')`} 
+	{
+		private:
+			${4}
+
+		public:
+			this(${2:args})
+			{
+	   		    ${3}
+			}
+	}
+# class
+snippet class
+	class ${1:`Filename('$1', 'name')`} 
+	{
+		private:
+			${4}
+
+		public:
+			this(${2:args})
+			{
+	   		    ${3}
+			}
+	}
+# interface
+snippet interface
+	interface ${1:name}
+	{
+		${2}
+	}
+# enum
+snippet enum
+	enum ${1:name}
+	{
+		${2}
+	}
+# version
+snippet version
+	version(${1:version_name})
+	{
+		${2}
+	}
+snippet debug
+	debug
+	{
+		${1}
+	}
+# unittest
+snippet unittest
+	unittest
+	{
+		${1}
+	}
+snippet utest
+	unittest
+	{
+		${1}
+	}
+# template
+snippet template
+	template ${2:name}(${1:args})
+	{
+		${3}
+	}
+# temp
+snippet temp
+	template ${2:name}(${1:args})
+	{
+		${3}
+	}
+# assert
+snippet assert
+	assert(${2:condition}, "${1:error_msg}");
+snippet ass
+	assert(${2:condition}, "${1:error_msg}");
+snippet astodo
+	assert(false, "TODO");
+	${1}
+# exception
+snippet except 
+	///${3}
+	class ${2:Foo}Exception : ${1}Exception
+	{ 
+		public this(string msg, string file = __FILE__, int line = __LINE__)
+		{
+			super(msg, file, line);
+		}
+	}
+snippet exc
+	///${3}
+	class ${2:Foo}Exception : ${1}Exception 
+	{
+		public this(string msg, string file = __FILE__, int line = __LINE__)
+		{
+			super(msg, file, line);
+		}
+	}
+snippet exception
+	///${3}
+	class ${2:Foo}Exception : ${1}Exception
+	{
+		public this(string msg, string file = __FILE__, int line = __LINE__)
+		{
+			super(msg, file, line);
+		}
+	}
+#associative arrays
+snippet aa
+	${3}[${2}] ${1};
+snippet aaa
+	${3}[${2}] ${1} =
+	    [${4}
+		];
+#10-element arrays
+snippet arr10
+	auto ${11} = [${1},
+	              ${2},
+	              ${3},
+	              ${4},
+	              ${5},
+	              ${6},
+	              ${7},
+	              ${8},
+	              ${9},
+	              ${10}];
+snippet str10
+	auto ${11} = ["${1}",
+	              "${2}",
+	              "${3}",
+	              "${4}",
+	              "${5}",
+	              "${6}",
+	              "${7}",
+	              "${8}",
+	              "${9}",
+	              "${10}"];
+# Operators:
+snippet opDispatch:
+	${1} opDispatch(string s)()
+	{
+		${2};
+	}
+snippet opDis:
+	${1} opDispatch(string s)()
+	{
+		${2};
+	}
+# Trivial shortcuts
+snippet dis:
+	@disable ${1};
+snippet @dis:
+	@disable ${1};
+snippet pub 
+	public:
+	    ${1}
+snippet pub 
+	public:
+	    ${1}
+snippet priv 
+	private:
+	    ${1}
+snippet prot 
+	protected:
+	    ${1}
+snippet pack 
+	package:
+	    ${1}
+snippet cast
+	cast(${1}) 
+snippet ret 
+	return ${1};
+snippet auto
+	auto ${2} = ${1};
+snippet con
+	const ${1}
+snippet siz 
+	size_t ${1}
+snippet sup 
+	super(${1});
+snippet is
+	is(${1})
+snippet typeof
+	typeof(${1})
+# Phobos
+snippet wr
+	writeln(${1});
+snippet enf
+	enforce(${1},
+			new ${3}Exception(${2}));
+snippet to
+	to!${2}(${1})
+snippet select
+	select!${3}(${2}, ${1});
+snippet max 
+	max(${1}, ${2})
+snippet min 
+	min(${1}, ${2})
+# Comments
+snippet todo
+	// TODO: ${1}
+# DDoc
+snippet doc
+	/**
+	 * ${1:description}
+	 *
+	 * ${2:long_description}
+	 */
+snippet fundoc
+	/**
+	 * ${1:description}
+	 *
+	 * Params:  ${4:param} = ${3:param_description}
+	 *
+	 * Returns: ${2:return_description}
+	 */
+snippet fdoc
+	/**
+	 * ${1:description}
+	 *
+	 * Params:  ${4:param} = ${3:param_description}
+	 *
+	 * Returns: ${2:return_description}
+	 */
+snippet fdoc2
+	/**
+	 * ${1:description}
+	 *
+	 * Params:  ${4:param} = ${3:param_description}
+	 *          ${6:param} = ${5:param_description}
+	 *
+	 * Returns: ${2:return_description}
+	 */
+snippet fdoc3
+	/**
+	 * ${1:description}
+	 *
+	 * Params:  ${4:param} = ${3:param_description}
+	 *          ${6:param} = ${5:param_description}
+	 *          ${8:param} = ${7:param_description}
+	 *
+	 * Returns: ${2:return_description}
+	 */
+snippet fdoc4
+	/**
+	 * ${1:description}
+	 *
+	 * Params:  ${4:param} = ${3:param_description}
+	 *          ${6:param} = ${5:param_description}
+	 *          ${8:param} = ${7:param_description}
+	 *          ${10:param} = ${9:param_description}
+	 *
+	 * Returns: ${2:return_description}
+	 */
+snippet Params
+	Params:  ${2:param} = ${1:description}
+snippet Return
+	Returns: ${1}
+snippet Returns
+	Returns: ${1}
+snippet example
+	 * Examples:
+	 * --------------------
+	 * ${1}
+	 * --------------------
+# GPL
+snippet gpl
+	/*
+	 * This program is free software; you can redistribute it and/or modify
+	 * it under the terms of the GNU General Public License as published by
+	 * the Free Software Foundation; either version 2 of the License, or
+	 * (at your option) any later version.
+	 *
+	 * This program is distributed in the hope that it will be useful,
+	 * but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	 * GNU General Public License for more details.
+	 *
+	 * You should have received a copy of the GNU General Public License
+	 * along with this program; if not, write to the Free Software
+	 * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+	 *
+	 * Copyright (C) ${1:Author}, `strftime("%Y")`
+	 */
+	
+	${2}
+# Boost
+snippet boost
+	//          Copyright ${1:Author} `strftime("%Y")`.
+	// Distributed under the Boost Software License, Version 1.0.
+	//    (See accompanying file LICENSE_1_0.txt or copy at
+	//          http://www.boost.org/LICENSE_1_0.txt)
+# New module
+snippet module
+	
+	//          Copyright ${1:Author} `strftime("%Y")`.
+	// Distributed under the Boost Software License, Version 1.0.
+	//    (See accompanying file LICENSE_1_0.txt or copy at
+	//          http://www.boost.org/LICENSE_1_0.txt)
+	
+	
+	module ${1}.`Filename('$1', 'name')`;
+
+
+	${2}
